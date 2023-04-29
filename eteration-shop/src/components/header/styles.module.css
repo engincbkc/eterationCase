@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+
+}
+
+.searchBar{
+
+}
+
+.summary {
+    display: inline-flex;
+}
+
+.summaryItem {
+    display: inline-flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
