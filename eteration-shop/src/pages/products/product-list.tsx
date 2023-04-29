@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../../components/pagination/pagination';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 
 import {isValid} from '../../helpers/Util'
 type Product = {
@@ -14,20 +14,45 @@ type Product = {
     name:string
 }
 function ProductList() {
-  const { number } = useParams();
+  const { number,name } = useParams();
 
   const [products, setProducts] = useState<Product[]>([]);
   const currentPage:number =  isValid(number) ? Number(number):1;
-  console.log("currentPage",number);
   const [productsPerPage] = useState<number>(12);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(() => {
+  
+  const filter = (obj:any):boolean => {
+    let filterByName =  searchParams.get('search') || '';
+    let brands:any =  searchParams.get('brands') || [];
+
+    let models:any = searchParams.get('brands') || []
+
+
+
+    let nameLogic:boolean =  obj.name.toLowerCase().includes(filterByName);
+
+    let brandLogic:boolean = brands.length>0 ? brands.toLowerCase().includes(obj.brand.toLowerCase()):true;
+
+    let modelLogic:boolean =  models.length>0 ? models.toLowerCase().includes(obj.model.toLowerCase()):true;
+
+    return nameLogic && brandLogic
+
+  }
+
+  const dataFetch = () => {
     fetch('https://5fc9346b2af77700165ae514.mockapi.io/products')
       .then(response => response.json())
-      .then(response => setProducts(response))
-      .catch(error => console.log(error));
-      console.log(products);
-  }, []);
+      .then(response => setProducts(response.filter( (p:any) =>filter(p)
+       )))
+       .catch(error => console.log(error));
+  }
+
+  useEffect(() => {
+    
+    dataFetch()
+      
+  }, [searchParams]);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -40,7 +65,7 @@ function ProductList() {
         {currentProducts.map((product:Product) => {
           return <li key={product.id}>
                     <h2><Link to={`/product/${product.id}`}>{product.name}</Link></h2>
-                    <p>{product.description}</p>
+                    <p> {product.brand} -- {product.model}</p>
                 </li>
         })}
       </ul>

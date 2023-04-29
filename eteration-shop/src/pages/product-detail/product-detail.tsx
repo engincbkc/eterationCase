@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState<any>(null);
+  
 
   useEffect(() => {
     
@@ -12,7 +13,6 @@ function ProductDetail() {
       .then(data => setProduct(data))
       .catch(error => console.log(error));
 
-      console.log(product);
   }, [id]);
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { isValid } from '../../helpers/Util';
 
-import { useParams } from 'react-router-dom';
 type props = {
     productsPerPage:number,
     totalProducts: number,
@@ -10,6 +10,7 @@ type props = {
 
 function Pagination({ productsPerPage, totalProducts, currentPage, }:props) {
 
+  const {name}:any = useParams() ;
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
@@ -24,7 +25,7 @@ function Pagination({ productsPerPage, totalProducts, currentPage, }:props) {
                 return;
             }
          return <li key={number} className='page-item'>
-                    <Link to={`/${number}`} className='page-link' >
+                    <Link to={`/${number}/${isValid(name) ? name:""}`} className='page-link' >
                     {number}
                     </Link>
                 </li>
