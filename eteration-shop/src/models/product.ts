@@ -2,7 +2,7 @@ export type Product = {
     id:number,
     image:string,
     brand:string,
-    createAt:string,
+    createdAt:string,
     description:string,
     model:string,
     price:string,

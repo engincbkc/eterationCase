@@ -23,11 +23,11 @@ const HomeContainer = () => {
 
       //old to new
       if(sortType == '1'){
-        return new Date(a.createAt).getTime() - new Date(b.createAt).getTime()
+        return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       }
       //new to old
       else if(sortType == '2'){
-        return new Date(b.createAt).getTime() - new Date(a.createAt).getTime()
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 
       }
       //price hight to low
