@@ -20,7 +20,6 @@ const HomeContainer = () => {
     const  productSort = (a:Product,b:Product) => {
       const sortType = searchParams.get('sortType') || '';
 
-
       //old to new
       if(sortType == '1'){
         return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
@@ -28,7 +27,6 @@ const HomeContainer = () => {
       //new to old
       else if(sortType == '2'){
         return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-
       }
       //price hight to low
       else if(sortType == '3'){
@@ -71,7 +69,7 @@ const HomeContainer = () => {
 
       useEffect(() => {
         dataFetch();
-      }, [searchParams]);
+      }, []);
 
       const filterByBrand = (brands: string[]) => {
         const params = new URLSearchParams(searchParams);
