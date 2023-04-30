@@ -47,7 +47,7 @@ const BrandFilter = ({ products, onBrandFilter }:BrandFilterProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <input type="text" value={searchText} onChange={handleSearch} placeholder="Marka ara..." />
+        <input type="text" value={searchText} onChange={handleSearch} placeholder="Brand Filter..." />
         <button onClick={filterProducts}>Filter</button>
         <button onClick={clearFilter}>Clear</button>
       </div>

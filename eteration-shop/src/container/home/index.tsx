@@ -52,34 +52,46 @@ const HomeContainer = () => {
         setSearchParams(params);
       };
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.leftSide}>
-                <div className={styles.filterGroup}>
-                    <div> <SortPanel/> </div>
+      const filterByModel = (models: string[]) => {
+        const params = new URLSearchParams(searchParams);
+        params.set('models', models.join(','));
+        setSearchParams(params);
+      };
 
-                    <BrandFilter
-                        products={products}
-                        onBrandFilter={(brands) => filterByBrand(brands)}
-                        />
-                    
-                    <div><ModelFilter/></div>
-                </div>
-            </div>
-            
-            <div className={styles.midSide}>
-                    <ProductList products={products.filter((p: any) => filter(p))} pageNumber={Number(number)}                    />
-            </div>
+      return (
+          <div className={styles.container}>
+              <div className={styles.leftSide}>
+                  
+                  <div className={styles.filterCard}>
+                     <SortPanel/> 
+                     </div>
 
-            <div className={styles.rightSide}>
-                <ShoppingCart/>
+                      <div className={styles.filterCard}>
+                      <BrandFilter
+                          products={products}
+                          onBrandFilter={(brands) => filterByBrand(brands)}
+                          />
+                      </div>
+                      <div className={styles.filterCard} style={{margin:100}}>
+                        <ModelFilter products={products} 
+                        onModelFilter = {(models) => filterByBrand(models)} />
+                        </div>
+              
+              </div>
+              
+              <div className={styles.midSide}>
+                      <ProductList products={products.filter((p: any) => filter(p))} pageNumber={Number(number||1)} />
+              </div>
 
-            </div>
-            
-        </div>
-    )
-   
-}
+              <div className={styles.rightSide}>
+                  <ShoppingCart/>
+
+              </div>
+              
+          </div>
+      )
+    
+  }
 
 
 export default HomeContainer;
