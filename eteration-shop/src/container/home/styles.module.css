@@ -6,13 +6,27 @@
 
 .leftSide {
     grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
 }
+
 
 
 .midSide {
     grid-column: 2 / 3;
+    height: 100%;
 }
 
 .rightSide {
     grid-column: 3 / 4;
-  }
+}
+.filterGroup{
+    margin-top: 20px;
+    height: 45%;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+

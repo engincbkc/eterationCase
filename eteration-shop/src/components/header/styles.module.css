@@ -1,18 +1,24 @@
 .container {
+    height: 50px;
     display: flex;
     justify-content: space-around;
+    background-color: #2A59FE;
+    align-items: center;
 }
 
 .title {
-
+    font-size: 20px;
+    font-weight: 700;
+    color: beige;
 }
 
 .searchBar{
-
+    height: 60%;
 }
 
 .summary {
     display: inline-flex;
+    color: bisque;
 }
 
 .summaryItem {

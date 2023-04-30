@@ -10,7 +10,7 @@ const Navbar = () => {
         <React.Fragment>
             <div className = {styles.container}>
                 <div className= {styles.title}>
-                    LOGO
+                    ETERATION
                 </div>
                 <div className= {styles.searchBar}>
                     <SearchBar/>
