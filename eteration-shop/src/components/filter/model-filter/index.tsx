@@ -13,7 +13,6 @@ const ModelFilter = ({ products, onModelFilter }:ModelFilterProps) => {
   const [checkedModels, setCheckedModels] = useState<string[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-
   const allModels = Array.from(new Set(products.map(product => product.model)));
 
   const handleSearch = (event: any) => {
@@ -35,7 +34,6 @@ const ModelFilter = ({ products, onModelFilter }:ModelFilterProps) => {
       checkedModels.includes(product.model) && product.name.toLowerCase().includes(searchText.toLowerCase())
     );
     const filteredModels = Array.from(new Set(filteredProducts.map(product => product.model)));
-    console.log(filteredModels);
     onModelFilter(filteredModels);
   };
 

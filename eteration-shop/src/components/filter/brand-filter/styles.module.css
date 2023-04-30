@@ -11,6 +11,7 @@
   background-color: #fff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   font-family: sans-serif;
+  overflow-y: scroll;
 }
 
 .header {
@@ -85,9 +86,9 @@ input[type="checkbox"] {
   background-color: #f5f5f5;
 }
 
-/* Additional styles */
-.container {
-  overflow-y: scroll;
+.container:hover{
+  border-color: #cbd5e0;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.9);
 }
 
 .filterGroup {

@@ -17,7 +17,32 @@ const HomeContainer = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const filter = (obj: any): boolean => {
+    const  productSort = (a:Product,b:Product) => {
+      const sortType = searchParams.get('sortType') || '';
+
+
+      //old to new
+      if(sortType == '1'){
+        return new Date(a.createAt).getTime() - new Date(b.createAt).getTime()
+      }
+      //new to old
+      else if(sortType == '2'){
+        return new Date(b.createAt).getTime() - new Date(a.createAt).getTime()
+
+      }
+      //price hight to low
+      else if(sortType == '3'){
+        return Number(b.price) - Number(a.price)
+      }
+      //price low to high
+      else if(sortType == '4'){
+        return Number(a.price) - Number(b.price)
+      }
+
+      return Number(a.price) - Number(b.price)
+    }
+
+    const productFilter = (obj: Product): boolean => {
         const filterByName = searchParams.get('search') || '';
         const brands: any = searchParams.get('brands') || [];
         const models: any = searchParams.get('models') || [];
@@ -30,8 +55,8 @@ const HomeContainer = () => {
           models.length > 0
             ? models.toLowerCase().includes(obj.model.toLowerCase())
             : true;
-            console.log(modelLogic);
-        
+
+            
         return nameLogic && (brandLogic && modelLogic);
       };
       
@@ -77,7 +102,7 @@ const HomeContainer = () => {
               </div>
               
               <div className={styles.midSide}>
-                      <ProductList products={products.filter((p: any) => filter(p))} pageNumber={Number(number||1)} />
+                      <ProductList products={products.filter((p: any) => productFilter(p)).sort((a:Product,b:Product)=>productSort(a,b))} pageNumber={Number(number||1)} />
               </div>
 
               <div className={styles.rightSide}>
