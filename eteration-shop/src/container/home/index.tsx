@@ -30,6 +30,8 @@ const HomeContainer = () => {
           models.length > 0
             ? models.toLowerCase().includes(obj.model.toLowerCase())
             : true;
+            console.log(modelLogic);
+        
         return nameLogic && brandLogic && modelLogic;
       };
       
@@ -61,17 +63,11 @@ const HomeContainer = () => {
       return (
           <div className={styles.container}>
               <div className={styles.leftSide}>
-                  
                      <SortPanel/> 
-                     
-
-                   
                        <BrandFilter
                           products={products}
                           onBrandFilter={(brands) => filterByBrand(brands)}
                           /> 
-                          test
-                   
                      
                         <ModelFilter products={products} 
                         onModelFilter = {(models) => filterByBrand(models)} />

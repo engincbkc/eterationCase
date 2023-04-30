@@ -14,7 +14,6 @@ type props = {
 
 const ProductList =({products = [],pageNumber=1}:props) =>{
   const navigate = useNavigate();
-  console.log(pageNumber);
 
   const currentPage: number = isValid(pageNumber) ? Number(pageNumber) : 1;
   const [productsPerPage] = useState<number>(12);
