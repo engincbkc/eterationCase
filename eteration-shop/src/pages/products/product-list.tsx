@@ -75,9 +75,8 @@ const ProductList =({products = [],pageNumber=1}:props) =>{
       <div className={styles.noProductsContainer}>
         <div className={styles.noProductsText}> Aradığınız özelliklerde ürün bulunamadı</div>
         <Link className={styles.noProductsLink} to={'/1'}>
-            <span className={styles.noProductsLinkText}>Diğer ürünlere göz atın</span>
-            
-          </Link>
+          <span className={styles.noProductsLinkText}>Diğer ürünlere göz atın</span>
+        </Link>
       </div>
       }
     </div>

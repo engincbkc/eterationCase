@@ -24,7 +24,11 @@ const  Pagination = ({ productsPerPage, totalProducts, currentPage, }:props) => 
       <ul className={styles.pagination}>
         {pageNumbers.map((number:number) => {
             if(number === currentPage){
-                return;
+              return <li key={number} className={styles.item}>
+                <Link to={`/${number}?${params}`} className={styles.link} style={{backgroundColor:'red',cursor:'default'}}>
+                  {number}
+                </Link>
+          </li>
             }
          return <li key={number} className={styles.item}>
                     <Link to={`/${number}?${params}`} className={styles.link} >
