@@ -32,7 +32,7 @@ const HomeContainer = () => {
             : true;
             console.log(modelLogic);
         
-        return nameLogic && brandLogic && modelLogic;
+        return nameLogic && (brandLogic && modelLogic);
       };
       
     const dataFetch = () => {
@@ -60,6 +60,7 @@ const HomeContainer = () => {
         setSearchParams(params);
       };
 
+
       return (
           <div className={styles.container}>
               <div className={styles.leftSide}>
@@ -70,7 +71,7 @@ const HomeContainer = () => {
                           /> 
                      
                         <ModelFilter products={products} 
-                        onModelFilter = {(models) => filterByBrand(models)} />
+                        onModelFilter = {(models) => filterByModel(models)} />
                         
               
               </div>
