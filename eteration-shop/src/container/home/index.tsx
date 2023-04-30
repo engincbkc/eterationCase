@@ -37,7 +37,7 @@ const HomeContainer = () => {
         fetch('https://5fc9346b2af77700165ae514.mockapi.io/products')
           .then((response) => response.json())
           .then((response) =>
-            setProducts(response.filter((p: any) => filter(p)))
+            setProducts(response)
           )
           .catch((error) => console.log(error));
       };
@@ -68,7 +68,7 @@ const HomeContainer = () => {
             </div>
             
             <div className={styles.midSide}>
-                    <ProductList products={products} pageNumber={Number(number)}                    />
+                    <ProductList products={products.filter((p: any) => filter(p))} pageNumber={Number(number)}                    />
             </div>
 
             <div className={styles.rightSide}>
