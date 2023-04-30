@@ -10,12 +10,10 @@ type props = {
 }
 
 const  Pagination = ({ productsPerPage, totalProducts, currentPage, }:props) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const name = searchParams.get('search');
-  const brand = searchParams.get('brand');
-  const model = searchParams.get('model');
-  const sort = searchParams.get('sort');
-  const [params, setParams] = useState<string>('?')
+ 
+  const params = window.location.href.split('?')[1];
+
+ 
   
   const checkParam = (param:any):boolean =>{
     return isValid(param) && (param.length>0)
@@ -29,17 +27,7 @@ const  Pagination = ({ productsPerPage, totalProducts, currentPage, }:props) => 
     return paramPath;
   }
   
-  const findParams = () => {
-    let searchParam:string = `${checkParam(name)?`search=${name}`:''}`;
-    let brandParam:string = `${checkParam(brand)?`brand=${brand}`:''}`;
-    let sortParam:string = `${checkParam(sort)?`sort=${sort}`:''}`;
-    let modelParam:string = `${checkParam(model)?`model=${model}`:''}`;
-    setParams(generateParams([searchParam,brandParam,sortParam,modelParam]));
-  }
 
-  useEffect(()=>{
-    findParams();
-  },[searchParams])
 
   const pageNumbers = [];
 
@@ -55,7 +43,7 @@ const  Pagination = ({ productsPerPage, totalProducts, currentPage, }:props) => 
                 return;
             }
          return <li key={number} className={styles.item}>
-                    <Link to={`/${number}${params}`} className={styles.link} >
+                    <Link to={`/${number}?${params}`} className={styles.link} >
                     {number}
                     </Link>
                 </li>
