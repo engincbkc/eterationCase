@@ -18,8 +18,10 @@ const ShoppingCart = () => {
 
   return (
     <div className={styles.container}>
-        <button className={styles.button} onClick={() => handleClearCart()}>Clear Cart</button>
-        <p className={styles.total}>Total : {total} $</p>
+        
+      <div><button className={styles.button} onClick={() => handleClearCart()}>Clear Cart</button></div>
+        <div style={{display:'inline-flex',justifyContent:'space-around',width:'100%'}}><p className={styles.total}>Total : {total} $</p>  <button style={{backgroundColor:'green',float:'right'}} className={styles.button} onClick={() => {}}>Checkout</button></div>
+       
 
 
       <h2 className={styles.title}>Shopping Cart</h2>
