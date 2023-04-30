@@ -35,7 +35,6 @@ const BrandFilter = ({ products, onBrandFilter }:BrandFilterProps) => {
       checkedBrands.includes(product.brand) && product.name.toLowerCase().includes(searchText.toLowerCase())
     );
     const filteredBrands = Array.from(new Set(filteredProducts.map(product => product.brand)));
-    console.log(filteredBrands);
     onBrandFilter(filteredBrands);
   };
 
@@ -43,7 +42,6 @@ const BrandFilter = ({ products, onBrandFilter }:BrandFilterProps) => {
     onBrandFilter([]);
     searchParams.delete('brands');
     setSearchParams(Object.fromEntries(searchParams));
-    console.log(searchParams);
     setCheckedBrands([]);
   };
 
