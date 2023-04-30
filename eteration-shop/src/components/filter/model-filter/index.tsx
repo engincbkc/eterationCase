@@ -4,11 +4,11 @@ import styles from './styles.module.css'
 
 
 
-const BrandFilter = () =>{
+const ModelFilter = () =>{
 
     return (
         <React.Fragment>
-            Marka Filtresi
+            Model Filtresi
 
             <div ></div>
 
@@ -17,4 +17,4 @@ const BrandFilter = () =>{
 
 }
 
-export default BrandFilter;
+export default ModelFilter;

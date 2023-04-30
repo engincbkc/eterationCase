@@ -16,6 +16,7 @@
 .midSide {
     grid-column: 2 / 3;
     height: 100%;
+    margin-top: 1%;
     margin-right: 2%;
     margin-left: 2%;
 

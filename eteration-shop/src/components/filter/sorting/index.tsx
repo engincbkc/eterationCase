@@ -4,11 +4,11 @@ import styles from './styles.module.css'
 
 
 
-const BrandFilter = () =>{
+const SortPanel = () =>{
 
     return (
         <React.Fragment>
-            Marka Filtresi
+            Sorting Panel
 
             <div ></div>
 
@@ -17,4 +17,4 @@ const BrandFilter = () =>{
 
 }
 
-export default BrandFilter;
+export default SortPanel;

@@ -1,52 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Pagination from '../../components/pagination/pagination';
-import { Link, useParams, useSearchParams, useNavigate } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { isValid } from '../../helpers/Util';
 import styles from './styles.module.css';
 import Button from 'react-bootstrap/Button';
 import { CartContext } from '../../context/cart-context';
 import { Product } from '../../models/product';
+type props = {
+  products: Product[],
+  pageNumber:number
+}
 
-
-function ProductList() {
-  const { number, name } = useParams<{ number?: string; name?: string }>();
+const ProductList =({products = [],pageNumber=1}:props) =>{
   const navigate = useNavigate();
 
-  const [products, setProducts] = useState<Product[]>([]);
-  const currentPage: number = isValid(number) ? Number(number) : 1;
+  const currentPage: number = isValid(pageNumber) ? Number(pageNumber) : 1;
   const [productsPerPage] = useState<number>(12);
-  const [searchParams, setSearchParams] = useSearchParams();
   const { addToCart } = useContext(CartContext);
-
-  const filter = (obj: any): boolean => {
-    const filterByName = searchParams.get('search') || '';
-    const brands: any = searchParams.get('brands') || [];
-    const models: any = searchParams.get('models') || [];
-    const nameLogic: boolean = obj.name.toLowerCase().includes(filterByName);
-    const brandLogic: boolean =
-      brands.length > 0
-        ? brands.toLowerCase().includes(obj.brand.toLowerCase())
-        : true;
-    const modelLogic: boolean =
-      models.length > 0
-        ? models.toLowerCase().includes(obj.model.toLowerCase())
-        : true;
-    return nameLogic && brandLogic && modelLogic;
-  };
-
-  const dataFetch = () => {
-    fetch('https://5fc9346b2af77700165ae514.mockapi.io/products')
-      .then((response) => response.json())
-      .then((response) =>
-        setProducts(response.filter((p: any) => filter(p)))
-      )
-      .catch((error) => console.log(error));
-  };
-
-  useEffect(() => {
-    dataFetch();
-  }, [searchParams]);
+ 
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -99,6 +71,15 @@ function ProductList() {
         totalProducts={products.length}
         currentPage={currentPage}
       />
+      {products.length==0 && 
+      <div className={styles.noProductsContainer}>
+        <div className={styles.noProductsText}> Aradığınız özelliklerde ürün bulunamadı</div>
+        <Link className={styles.noProductsLink} to={'/1'}>
+            <span className={styles.noProductsLinkText}>Diğer ürünlere göz atın</span>
+            
+          </Link>
+      </div>
+      }
     </div>
   );
 };
