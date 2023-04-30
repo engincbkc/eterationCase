@@ -66,7 +66,7 @@ function ProductList() {
   return (
     <div className={styles.container}>
       <div className={styles.cardGroup}>
-        {currentProducts.map((product: Product) => {
+        {currentProducts && currentProducts.map((product: Product) => {
           return (
             <Card key={product.id} className={styles.card}>
               <div onClick={() => goToDetail(product.id)}>

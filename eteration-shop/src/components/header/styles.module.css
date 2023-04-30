@@ -23,6 +23,8 @@
 
 .summaryItem {
     display: inline-flex;
-    margin-left: 5px;
+    margin-left: 55px;
     margin-right: 5px;
+    font-weight: 550;
+    font-size: 18px;
 }

@@ -1,10 +1,11 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { FaCartPlus, FaUser } from "react-icons/fa";
 import styles from "./styles.module.css"
-
+import { CartContext } from "../../context/cart-context";
 import SearchBar from "../searchbar";
 
 const Navbar = () => {
+    const {total} = useContext(CartContext);
 
     return(
         <React.Fragment>
@@ -16,8 +17,14 @@ const Navbar = () => {
                     <SearchBar/>
                 </div>
                 <div className= {styles.summary}>
-                   <div className = {styles.summaryItem} > <div>LOGOSEPET</div> <div>TOTALPARA</div> </div>
-                   <div className = {styles.summaryItem}> <div>LOGOPROFILE</div> <div>TOTALPARA</div> </div>
+                   <div className = {styles.summaryItem} >
+                        <div><FaCartPlus /></div>
+                        <div>{total}$</div>
+                   </div>
+                   <div className = {styles.summaryItem}>
+                        <div><FaUser /></div>
+                        <div>Engin </div>
+                   </div>
                 </div>
 
             </div>

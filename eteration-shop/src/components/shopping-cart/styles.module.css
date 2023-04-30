@@ -4,12 +4,22 @@
   padding: 1rem;
   border: 2px solid #ccc;
   border-radius: 0.5rem;
+  position: fixed;
+  top: 10%;
+  max-height: calc(90vh - 4rem);
+  overflow-y: auto;
 }
 
 .title {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+.shopping-cart-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 
 .item {
   display: flex;
@@ -45,7 +55,7 @@
   background-color: #f44336;
   color: #fff;
   border: none;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-top: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -58,4 +68,27 @@
 .container:hover {
     border-color: #cbd5e0;
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.9);
+}
+
+.container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f5f5f5;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #8b8b8b;
+}
+
+.container::-webkit-scrollbar-thumb:active {
+  background-color: #4c4c4c;
+}
+
+.container::-webkit-scrollbar-corner {
+  background-color: #f5f5f5;
 }
