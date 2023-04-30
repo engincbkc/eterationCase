@@ -29,8 +29,8 @@ const ShoppingCart = () => {
             <div>
             {product.name} x {product.quantity} 
             </div> 
-            -
-            <div>
+            <div style={{marginLeft:10}}>-</div> 
+            <div style={{marginLeft:20}}>
              ${product.price}
             <button onClick={() => handleAddToCart(product)}>+</button>
             <button onClick={() => handleRemoveFromCart(product)}>-</button>
