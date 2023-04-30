@@ -11,74 +11,84 @@
   background-color: #fff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   font-family: sans-serif;
-  }
-  
-  .header {
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  }
-  
-  input[type="text"] {
+}
+
+input[type="text"] {
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid #ccc;
   font-size: 1rem;
-  }
-  
-  button {
+}
+
+button {
   background-color: #007bff;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
   background-color: #0069d9;
-  }
-  
-  .filterGroup {
+}
+
+.filterGroup {
   display: flex;
   flex-wrap: wrap;
-  }
-  
-  label {
+}
+
+label {
   display: flex;
   align-items: center;
   margin-right: 1rem;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  }
-  
-  input[type="checkbox"] {
+}
+
+input[type="checkbox"] {
   margin-right: 0.5rem;
-  }
-  
-  /* Scrollbar styles */
-  .container::-webkit-scrollbar {
+}
+
+/* Scrollbar styles */
+.container::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   background-color: #f5f5f5;
-  }
-  
-  .container::-webkit-scrollbar-thumb {
+}
+
+.container::-webkit-scrollbar-thumb {
   background-color: #c1c1c1;
   border-radius: 4px;
-  }
-  
-  .container::-webkit-scrollbar-thumb:hover {
+}
+
+.container::-webkit-scrollbar-thumb:hover {
   background-color: #8b8b8b;
-  }
-  
-  .container::-webkit-scrollbar-thumb:active {
+}
+
+.container::-webkit-scrollbar-thumb:active {
   background-color: #4c4c4c;
-  }
-  
-  .container::-webkit-scrollbar-corner {
+}
+
+.container::-webkit-scrollbar-corner {
   background-color: #f5f5f5;
-  }
-  
-  
+}
+
+/* Additional styles */
+.container {
+  overflow-y: scroll;
+}
+
+.filterGroup {
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 60vh;
+  overflow-y: auto;
+}
