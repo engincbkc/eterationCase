@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from './styles.module.css';
 import { Product } from "../../../models/product";
 
-interface BrandFilterProps {
+type BrandFilterProps = { 
   products: Product[];
   onBrandFilter: (brands: string[]) => void;
 }
