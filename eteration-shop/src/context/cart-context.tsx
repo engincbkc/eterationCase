@@ -77,7 +77,6 @@ export const CartProvider = ({ children }: any) => {
       } else {
         updatedCart.splice(existingProductIndex, 1);
       }
-      console.log("updated Cart",updatedCart);
       setCart(updatedCart);
       storage.current = updatedCart;
 
