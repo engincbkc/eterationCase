@@ -41,14 +41,10 @@ const ModelFilter = ({ products, onModelFilter }:ModelFilterProps) => {
 
   const clearFilter = () => {
     setCheckedModels([]);
-    allModels.forEach((model) => {
-      handleModelCheck({ target: { value: model, checked: false } });
-    });
     onModelFilter([]);
-    if(setCheckedModels?.length === 0){
-      searchParams.delete('model')
-    }
-  };
+    searchParams.delete('models');
+    setSearchParams(Object.fromEntries(searchParams));
+};
 
   return (
     <div className={styles.container}>

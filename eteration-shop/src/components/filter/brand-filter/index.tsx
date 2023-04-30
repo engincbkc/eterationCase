@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './styles.module.css';
 import { Product } from "../../../models/product";
+import { useSearchParams } from "react-router-dom";
 
 type BrandFilterProps = { 
   products: Product[];
@@ -10,6 +11,8 @@ type BrandFilterProps = {
 const BrandFilter = ({ products, onBrandFilter }:BrandFilterProps) => {
   const [searchText, setSearchText] = useState('');
   const [checkedBrands, setCheckedBrands] = useState<string[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
 
   const allBrands = Array.from(new Set(products.map(product => product.brand)));
 
@@ -37,11 +40,11 @@ const BrandFilter = ({ products, onBrandFilter }:BrandFilterProps) => {
   };
 
   const clearFilter = () => {
+    onBrandFilter([]);
+    searchParams.delete('brands');
+    setSearchParams(Object.fromEntries(searchParams));
+    console.log(searchParams);
     setCheckedBrands([]);
-    allBrands.forEach((brand) => {
-      handleBrandCheck({ target: { value: brand, checked: false } });
-    });
-    onBrandFilter([])
   };
 
   return (
