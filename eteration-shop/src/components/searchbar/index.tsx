@@ -23,7 +23,7 @@ function SearchBar() {
   
     return (
         <Form style={{width:'100%',height:'100%'}} onSubmit={e => { e.preventDefault(); }}>
-            <FormControl  style={{width:'100%',height:'100%'}} type="text" placeholder = "Search" className="mr-sm-2" onChange={handleSearch} defaultValue={search} />
+            <FormControl  style={{width:'100%',height:'100%',borderRadius:15}} type="text" placeholder = "Search" className="mr-sm-2" onChange={handleSearch} defaultValue={search} />
         </Form>
     );
 }

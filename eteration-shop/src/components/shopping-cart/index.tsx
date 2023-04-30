@@ -26,9 +26,15 @@ const ShoppingCart = () => {
       <ul>
         {cart && cart.map((product: any, index: number) => (
           <li key={product.id + index} className={styles.item}>
-            {product.name} x {product.quantity} - ${product.price}
+            <div>
+            {product.name} x {product.quantity} 
+            </div> 
+            -
+            <div>
+             ${product.price}
             <button onClick={() => handleAddToCart(product)}>+</button>
             <button onClick={() => handleRemoveFromCart(product)}>-</button>
+            </div>
           </li>
         ))}
       </ul>
