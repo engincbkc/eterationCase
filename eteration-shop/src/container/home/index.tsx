@@ -62,20 +62,20 @@ const HomeContainer = () => {
           <div className={styles.container}>
               <div className={styles.leftSide}>
                   
-                  <div className={styles.filterCard}>
                      <SortPanel/> 
-                     </div>
+                     
 
-                      <div className={styles.filterCard}>
-                      <BrandFilter
+                   
+                       <BrandFilter
                           products={products}
                           onBrandFilter={(brands) => filterByBrand(brands)}
-                          />
-                      </div>
-                      <div className={styles.filterCard} style={{margin:100}}>
+                          /> 
+                          test
+                   
+                     
                         <ModelFilter products={products} 
                         onModelFilter = {(models) => filterByBrand(models)} />
-                        </div>
+                        
               
               </div>
               

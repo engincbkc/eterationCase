@@ -17,9 +17,7 @@
 .rightSide {
     grid-column: 3 / 4;
 }
-.filterCard{
-    width: 100%;
-}
+
 
 .leftSide{
     grid-column: 1 / 2;

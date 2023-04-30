@@ -5,10 +5,8 @@
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   position: fixed;
-  width: 100%;
-  top: 10%;
-  left: 0;
-  max-height:350px;
+  top: 30%;
+  max-height:250px;
   overflow-y: auto;
   background-color: #fff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
