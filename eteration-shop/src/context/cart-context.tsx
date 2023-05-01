@@ -9,7 +9,7 @@ type CartContextType = {
   total:number
 };
 
-const CART_STORAGE_KEY = "my-cart";
+const CART_STORAGE_KEY = "my-cart"; // TODO: .env'ye alınacak  - Engin Ç.
 
 export const CartContext = createContext<CartContextType>({
   cart: [],

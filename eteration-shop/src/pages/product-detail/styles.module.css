@@ -1,81 +1,68 @@
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
-  }
-  
-  .product-info {
-    flex: 0 0 45%;
-  }
-  
-  .product-info h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .product-info p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .product-image {
-    flex: 0 0 45%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .product-image img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  .button-container button {
-    font-size: 1.2rem;
-    margin-left: 10px;
-  }
-  
-  .back {
-    display: block;
-    margin-top: 20px;
-    font-size: 1.2rem;
-  }
-  
-  .shopping-cart {
-    flex: 0 0 45%;
-    margin-top: 20px;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .product-info {
-      flex: 0 0 100%;
-      text-align: center;
-    }
-    
-    .product-image {
-      flex: 0 0 100%;
-      margin-top: 20px;
-    }
-    
-    .shopping-cart {
-      flex: 0 0 100%;
-      margin-top: 20px;
-    }
-    
-    .button-container {
-      justify-content: center;
-      margin-top: 20px;
-    }
-  }
-  
+  background-color: #f9f9f9;
+  margin-left: 25%;
+  margin-top: 1%;
+}
+
+.productInfo {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.back {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #555;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+.back:hover {
+  color: white;
+  background-color: black;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  color: #555;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #007;
+border: none;
+color: #fff;
+padding: 10px 20px;
+font-size: 1.2rem;
+border-radius: 5px;
+transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+background-color: #005;
+}
