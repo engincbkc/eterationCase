@@ -37,7 +37,7 @@ const HomeContainer = () => {
         return Number(a.price) - Number(b.price)
       }
 
-      return Number(a.price) - Number(b.price)
+      return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
     }
 
     const productFilter = (obj: Product): boolean => {

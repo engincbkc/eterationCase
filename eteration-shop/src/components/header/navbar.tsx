@@ -3,6 +3,7 @@ import { FaCartPlus, FaUser } from "react-icons/fa";
 import styles from "./styles.module.css"
 import { CartContext } from "../../context/cart-context";
 import SearchBar from "../searchbar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const {total} = useContext(CartContext);
@@ -11,7 +12,7 @@ const Navbar = () => {
         <React.Fragment>
             <div className = {styles.container}>
                 <div className= {styles.title}>
-                    ETERATION
+                    <Link to={"/1"} style={{color:"inherit",textDecoration:'none'}}>ETERATION</Link>
                 </div>
                 <div className= {styles.searchBar}>
                     <SearchBar/>

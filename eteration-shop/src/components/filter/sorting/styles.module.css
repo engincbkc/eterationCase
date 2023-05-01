@@ -24,5 +24,10 @@ input[type="radio"] {
   margin-right: 0.5rem;
 }
 
+.container:hover {
+  border-color: #cbd5e0;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.9);
+}
+
   
   
