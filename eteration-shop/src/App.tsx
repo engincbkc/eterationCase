@@ -2,11 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import Navbar from './components/header/navbar';
 import { Route, Routes } from "react-router-dom";
-import ProductList from './pages/products/product-list';
-import ProductDetail from './pages/product-detail/product-detail';
-import HomeContainer from './container/home';
+import ProductList from './components/products/product-list';
 import { CartProvider } from './context/cart-context';
-import DetailContainer from './container/detail';
+import HomePage from './pages/home';
+import DetailPage from './pages/product-detail';
 
 function App() {
   return (
@@ -16,10 +15,10 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path ="/" element = {<HomeContainer />} >
-            <Route path='/:number' element= {<HomeContainer />} />
+          <Route path ="/" element = {<HomePage />} >
+            <Route path='/:number' element= {<HomePage />} />
           </Route>
-          <Route path ="/product/:id" element = {<DetailContainer />} />
+          <Route path ="/product/:id" element = {<DetailPage />} />
         </Routes>
       </CartProvider>
   </React.Fragment>

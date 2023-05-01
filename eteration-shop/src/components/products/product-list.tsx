@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Pagination from '../../components/pagination/pagination';
+import Pagination from '../pagination/pagination';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { isValid } from '../../helpers/Util';
@@ -19,7 +19,6 @@ const ProductList =({products = [],pageNumber=1}:props) =>{
   const [productsPerPage] = useState<number>(12);
   const { addToCart } = useContext(CartContext);
  
-
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(

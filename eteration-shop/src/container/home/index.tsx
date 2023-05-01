@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from './styles.module.css'
-import ProductList from "../../pages/products/product-list";
+import ProductList from "../../components/products/product-list";
 import BrandFilter from "../../components/filter/brand-filter";
 import ShoppingCart from "../../components/shopping-cart";
 import { CartProvider } from "../../context/cart-context";

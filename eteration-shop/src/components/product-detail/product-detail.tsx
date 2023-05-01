@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import ShoppingCart from '../../components/shopping-cart';
+import ShoppingCart from '../shopping-cart';
 import { Product } from '../../models/product';
 import { Button } from 'react-bootstrap';
 import styles from './styles.module.css';

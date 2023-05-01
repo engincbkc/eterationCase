@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './styles.module.css'
-import ProductDetail from "../../pages/product-detail/product-detail";
+import ProductDetail from "../../components/product-detail/product-detail";
 import ShoppingCart from "../../components/shopping-cart";
 
 
