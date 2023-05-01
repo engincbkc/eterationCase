@@ -30,10 +30,11 @@ function ProductDetail() {
             <img src={product.image} alt={product.name} className={styles.productImage} />
             <h2>{product.name}</h2>
             <p className={styles.description}>{product.description}</p>
-            <p className={styles.price}>{product.price} $</p>
             <Button onClick={() => handleAddToCart(product)} className={styles.button}>
               Add to Cart
             </Button>
+            <p className={styles.price}>{product.price} $</p>
+           
             <Link to={`/1`} className={styles.back}>
               {"Back"}
               </Link>
