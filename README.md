@@ -1,12 +1,13 @@
 # eterationCase
-  #Ana sayfa
+
+
+# Ana sayfa
 ![alternatif metin](imgsrc/homepagewithpagination.png)
 
 
-#Filtrelerin kullanılmış hali
+# Filtrelerin kullanılmış hali
 ![alternatif metin](imgsrc/hompagewithfilters.png)
 
-
-#Detay Sayfası
+# Detay Sayfası
 
 ![alternatif metin](imgsrc/detail.png)
