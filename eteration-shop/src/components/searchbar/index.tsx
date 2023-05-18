@@ -18,6 +18,7 @@ function SearchBar() {
     useEffect(()=>{
         console.log(searchParams.get('search'));
         if(!searchParams.get('search')){
+            console.log("search ifin içine girdi",search);
             setSearch('');
         };
     },[searchParams]);
