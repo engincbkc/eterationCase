@@ -16,7 +16,7 @@ function SearchBar() {
     },[search]);
 
     useEffect(()=>{
-        console.log(searchParams.get('search'));
+        console.log("useEffect değişti",searchParams.get('search'));
         if(!searchParams.get('search')){
             console.log("search ifin içine girdi",search);
             setSearch('');
@@ -31,7 +31,7 @@ function SearchBar() {
     return (
         <Form style={{width:'100%',height:'100%'}} onSubmit={e => { e.preventDefault(); }}>
             <FormControl  style={{width:'100%',height:'100%',borderRadius:15}} type="text"
-             placeholder = "Search" className="mr-sm-2" onChange={handleSearch} defaultValue={search} />
+             placeholder = "Search" className="mr-sm-2" onChange={handleSearch} value={search} />
         </Form>
     );
 }
