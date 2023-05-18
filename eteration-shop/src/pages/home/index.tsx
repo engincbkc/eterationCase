@@ -4,7 +4,6 @@ import HomeContainer from '../../container/home'
 
 const HomePage = () =>{
 
-    console.log ("homepage")
 
     return <>
             <HomeContainer />
