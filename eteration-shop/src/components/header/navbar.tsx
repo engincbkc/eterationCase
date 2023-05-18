@@ -12,7 +12,7 @@ const Navbar = () => {
         <React.Fragment>
             <div className = {styles.container}>
                 <div className= {styles.title}>
-                    <Link to={"/1"} style={{color:"inherit",textDecoration:'none'}}>ETERATION</Link>
+                    <Link to={"/1"} style={{color:"inherit",textDecoration:'none'}}>MYSHOP</Link>
                 </div>
                 <div className= {styles.searchBar}>
                     <SearchBar/>
