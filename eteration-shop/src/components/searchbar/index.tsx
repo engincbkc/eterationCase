@@ -13,15 +13,18 @@ function SearchBar() {
             searchParams.delete('search')
         }
         setSearchParams(Object.fromEntries(searchParams))
-    },[search])
+    },[search]);
+
+    useEffect(()=>{
+        console.log(searchParams.get('search'));
+        if(!searchParams.get('search')){
+            setSearch('');
+        };
+    },[searchParams]);
 
 
     const handleSearch = (e:any) => {
         setSearch(e.target.value);
-        console.log("searchParams.get(search)",searchParams.get(search));
-        if(!searchParams.get(search)){
-            setSearch('');
-        }
     };
   
     return (
