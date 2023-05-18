@@ -4,7 +4,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 
 function SearchBar() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [filter, setFilter] = useState("");
     const [search, setSearch] = useState('');
 
     useEffect(()=>{
@@ -19,11 +18,16 @@ function SearchBar() {
 
     const handleSearch = (e:any) => {
         setSearch(e.target.value);
+        console.log("searchParams.get(search)",searchParams.get(search));
+        if(!searchParams.get(search)){
+            setSearch('');
+        }
     };
   
     return (
         <Form style={{width:'100%',height:'100%'}} onSubmit={e => { e.preventDefault(); }}>
-            <FormControl  style={{width:'100%',height:'100%',borderRadius:15}} type="text" placeholder = "Search" className="mr-sm-2" onChange={handleSearch} defaultValue={search} />
+            <FormControl  style={{width:'100%',height:'100%',borderRadius:15}} type="text"
+             placeholder = "Search" className="mr-sm-2" onChange={handleSearch} defaultValue={search} />
         </Form>
     );
 }
